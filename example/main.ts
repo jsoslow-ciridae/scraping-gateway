@@ -15,8 +15,43 @@ import { z } from "zod";
 import chalk from "chalk";
 import dotenv from "dotenv";
 import { actWithCache, drawObserveOverlay, clearOverlays } from "./utils.js";
+import OpenAI from "openai";
+const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 dotenv.config();
+
+const response = await client.responses.create({
+  model: "gpt-4o",
+  input: "Write a one-sentence bedtime story about a unicorn.",
+});
+
+console.log(response.output_text);
+
+async function selectBestObservation(observations: any[], objective: string) {
+  // Format the prompt for the OpenAI API
+  const input = `Pick the best observation to achieve this objective: ${objective}\n\nObservations:\n${JSON.stringify(
+    observations,
+    null,
+    2
+  )}`;
+
+  try {
+    const response = await client.responses.create({
+      model: "gpt-4o",
+      input,
+      instructions:
+        "You are an AI assistant helping to select the best observation for achieving a specific objective in web automation. Return only the index number of the best observation.",
+      max_output_tokens: 50,
+    });
+
+    console.log(chalk.green("Response:"), response);
+
+    return parseInt(response.output_text.trim());
+  } catch (error) {
+    console.error("Error selecting best observation:", error);
+    return 0; // Return first observation as fallback
+  }
+}
 
 export async function main({
   page,
@@ -32,12 +67,18 @@ export async function main({
 
   const objective = "List all of the open jobs";
 
-  // You can pass a string directly to act
+  // Get observations
   const observations = await page.observe();
-  console.log(observations);
+  console.log("Available observations:", observations);
 
-  // Click the careers button
-  await page.act("click the careers button");
+  // Select the best observation using OpenAI
+  const bestObservationIndex = await selectBestObservation(
+    observations,
+    objective
+  );
+
+  // Use the best observation for the act function
+  await page.act(observations[bestObservationIndex]);
   await page.waitForTimeout(1000); // Wait a bit for the navigation to complete
 
   // // You can use observe to plan an action before doing it
