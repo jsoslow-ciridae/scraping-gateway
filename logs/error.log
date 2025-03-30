@@ -1,0 +1,1 @@
+2025-03-30 09:46:34:4634 [31merror[39m: [31mFailed to create SSE transport for server "simple_sse_server": MCPClientError: Failed to connect to SSE server "simple_sse_server": Error: Error POSTing to endpoint (HTTP 400): InternalServerError: stream is not readable[39m
