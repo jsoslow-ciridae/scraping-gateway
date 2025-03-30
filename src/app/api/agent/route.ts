@@ -57,10 +57,12 @@ Question: {input}
 Thought:{agent_scratchpad}`;
 
 // --- Helper Function to Wrap MCP Tools ---
+// --- Helper Function to Wrap MCP Tools ---
 function wrapMcpTools(mcpTools: LangChainTool[]): LangChainTool[] {
   return mcpTools.map((mcpTool) => {
+    // --- Wrapper for echo_tool (Existing) ---
     if (mcpTool.name === "echo_tool") {
-      console.log("[API Route] Wrapping 'echo_tool' (Wrap Input + Cast Call)");
+      console.log("[API Route] Wrapping 'echo_tool'");
       return new DynamicTool({
         name: mcpTool.name,
         description: mcpTool.description,
@@ -70,12 +72,10 @@ function wrapMcpTools(mcpTools: LangChainTool[]): LangChainTool[] {
             input,
             `(type: ${typeof input})`
           );
-
           type EchoToolInput = { message: string };
-          let callInput: EchoToolInput; // Object tool expects
-
+          let callInput: EchoToolInput;
           if (typeof input === "string") {
-            callInput = { message: input }; // Wrap string into object
+            callInput = { message: input };
             console.log(`[API Route] Wrapping string input to:`, callInput);
           } else if (
             typeof input === "object" &&
@@ -83,7 +83,7 @@ function wrapMcpTools(mcpTools: LangChainTool[]): LangChainTool[] {
             "message" in input &&
             typeof (input as any).message === "string"
           ) {
-            callInput = input as EchoToolInput; // Use object directly
+            callInput = input as EchoToolInput;
             console.log(`[API Route] Using object input directly:`, callInput);
           } else {
             console.error(
@@ -98,15 +98,12 @@ function wrapMcpTools(mcpTools: LangChainTool[]): LangChainTool[] {
               } received unexpected input type: ${typeof input}`
             );
           }
-
           try {
-            // Call original tool, passing the STRUCTURED object, use 'as any'
-            // to bypass the restrictive TypeScript signature of .call()
             console.log(
               `[API Route] Calling original mcpTool.call with STRUCTURED input:`,
               callInput
             );
-            const result = await mcpTool.call(callInput as any); // <-- Use 'as any' assertion HERE
+            const result = await mcpTool.call(callInput as any); // Use 'as any'
             console.log(`[API Route] Original MCP tool call returned:`, result);
             return typeof result === "string" ? result : JSON.stringify(result);
           } catch (e) {
@@ -121,7 +118,143 @@ function wrapMcpTools(mcpTools: LangChainTool[]): LangChainTool[] {
         },
       });
     }
-    return mcpTool; // Return other tools unmodified
+    // --- Wrapper for stagehand_navigate (Existing) ---
+    else if (mcpTool.name === "stagehand_navigate") {
+      console.log("[API Route] Wrapping 'stagehand_navigate'");
+      return new DynamicTool({
+        name: mcpTool.name,
+        description: mcpTool.description,
+        func: async (input: unknown): Promise<string> => {
+          console.log(
+            `[API Route] Wrapper func for ${mcpTool.name} received input:`,
+            input,
+            `(type: ${typeof input})`
+          );
+          type NavigateToolInput = { url: string };
+          let callInput: NavigateToolInput;
+          if (typeof input === "string") {
+            callInput = { url: input };
+            console.log(`[API Route] Wrapping string input to:`, callInput);
+          } else if (
+            typeof input === "object" &&
+            input !== null &&
+            "url" in input &&
+            typeof (input as any).url === "string"
+          ) {
+            callInput = input as NavigateToolInput;
+            console.log(`[API Route] Using object input directly:`, callInput);
+          } else {
+            console.error(
+              `[API Route] Unexpected input type for ${
+                mcpTool.name
+              }: ${typeof input}`,
+              input
+            );
+            throw new Error(
+              `Tool ${
+                mcpTool.name
+              } received unexpected input type: ${typeof input}`
+            );
+          }
+          try {
+            console.log(
+              `[API Route] Calling original mcpTool.call with STRUCTURED input:`,
+              callInput
+            );
+            const result = await mcpTool.call(callInput as any); // Use 'as any'
+            console.log(`[API Route] Original MCP tool call returned:`, result);
+            return typeof result === "string" ? result : JSON.stringify(result);
+          } catch (e) {
+            console.error(
+              `[API Route] Error calling original ${mcpTool.name}:`,
+              e
+            );
+            return e instanceof Error
+              ? `Error: ${e.message}`
+              : `Error: ${String(e)}`;
+          }
+        },
+      });
+    }
+    // --- NEW: Wrapper for stagehand_extract ---
+    else if (mcpTool.name === "stagehand_extract") {
+      console.log(
+        "[API Route] Wrapping 'stagehand_extract' (Expects {} input)"
+      );
+      return new DynamicTool({
+        name: mcpTool.name,
+        description: mcpTool.description,
+        // This tool expects an empty object, even if the agent sends an empty string
+        func: async (input: unknown): Promise<string> => {
+          console.log(
+            `[API Route] Wrapper func for ${mcpTool.name} received input:`,
+            input, // Agent likely sends "" or similar
+            `(type: ${typeof input})`
+          );
+          // Force input to be an empty object, as expected by the adapter for empty schemas
+          const callInput = {};
+          console.log(`[API Route] Forcing input to empty object:`, callInput);
+          try {
+            console.log(
+              `[API Route] Calling original mcpTool.call with FORCED empty object input:`,
+              callInput
+            );
+            const result = await mcpTool.call(callInput as any); // Use 'as any'
+            console.log(`[API Route] Original MCP tool call returned:`, result);
+            return typeof result === "string" ? result : JSON.stringify(result);
+          } catch (e) {
+            console.error(
+              `[API Route] Error calling original ${mcpTool.name}:`,
+              e
+            );
+            return e instanceof Error
+              ? `Error: ${e.message}`
+              : `Error: ${String(e)}`;
+          }
+        },
+      });
+    }
+    // --- NEW: Wrapper for screenshot (Also likely expects {} input due to empty schema) ---
+    else if (mcpTool.name === "screenshot") {
+      console.log("[API Route] Wrapping 'screenshot' (Expects {} input)");
+      return new DynamicTool({
+        name: mcpTool.name,
+        description: mcpTool.description,
+        func: async (input: unknown): Promise<string> => {
+          console.log(
+            `[API Route] Wrapper func for ${mcpTool.name} received input:`,
+            input,
+            `(type: ${typeof input})`
+          );
+          // Force input to be an empty object
+          const callInput = {};
+          console.log(`[API Route] Forcing input to empty object:`, callInput);
+          try {
+            console.log(
+              `[API Route] Calling original mcpTool.call with FORCED empty object input:`,
+              callInput
+            );
+            const result = await mcpTool.call(callInput as any); // Use 'as any'
+            console.log(`[API Route] Original MCP tool call returned:`, result);
+            return typeof result === "string" ? result : JSON.stringify(result);
+          } catch (e) {
+            console.error(
+              `[API Route] Error calling original ${mcpTool.name}:`,
+              e
+            );
+            return e instanceof Error
+              ? `Error: ${e.message}`
+              : `Error: ${String(e)}`;
+          }
+        },
+      });
+    }
+    // --- Consider wrapping stagehand_act and stagehand_observe if they expect object inputs ---
+    // else if (mcpTool.name === "stagehand_act") { /* Similar logic if it expects an object */ }
+    // else if (mcpTool.name === "stagehand_observe") { /* Similar logic if it expects an object */ }
+
+    // --- Return unmodified tools if no specific wrapper exists ---
+    return mcpTool;
   });
 }
 

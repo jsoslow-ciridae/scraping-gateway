@@ -569,3 +569,67 @@
 2025-03-30 14:46:16:4616 [37mdebug[39m: [37mClosing SSE transport for server "simple_sse_server"[39m
 2025-03-30 14:46:16:4616 [37mdebug[39m: [37mClosing SSE transport for server "stagehand"[39m
 2025-03-30 14:46:16:4616 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 14:57:04:574 [32minfo[39m: [32mInitializing connection to server "simple_sse_server"...[39m
+2025-03-30 14:57:04:574 [37mdebug[39m: [37mCreating SSE transport for server "simple_sse_server" with URL: http://localhost:3001/sse[39m
+2025-03-30 14:57:04:574 [31merror[39m: [31mFailed to create SSE transport for server "simple_sse_server": MCPClientError: Failed to connect to SSE server "simple_sse_server": Error: SSE error: TypeError: fetch failed: connect ECONNREFUSED ::1:3001, connect ECONNREFUSED 127.0.0.1:3001[39m
+2025-03-30 14:57:04:574 [32minfo[39m: [32mInitializing connection to server "stagehand"...[39m
+2025-03-30 14:57:04:574 [37mdebug[39m: [37mCreating SSE transport for server "stagehand" with URL: http://localhost:3002/stagehand/sse[39m
+2025-03-30 14:57:04:574 [37mdebug[39m: [37mLoading tools for server "stagehand"...[39m
+2025-03-30 14:57:04:574 [37mdebug[39m: [37mListing available MCP tools...[39m
+2025-03-30 14:57:04:574 [32minfo[39m: [32mFound 5 MCP tools[39m
+2025-03-30 14:57:04:574 [37mdebug[39m: [37mConverting MCP tool "stagehand_navigate" to LangChain tool[39m
+2025-03-30 14:57:04:574 [37mdebug[39m: [37mConverting MCP tool "stagehand_act" to LangChain tool[39m
+2025-03-30 14:57:04:574 [37mdebug[39m: [37mConverting MCP tool "stagehand_extract" to LangChain tool[39m
+2025-03-30 14:57:04:574 [33mwarn[39m: [33mTool "stagehand_extract" has an empty input schema. Some LLMs and agent implementations (especially React agents and Gemini models) require tools to have parameters.[39m
+2025-03-30 14:57:04:574 [37mdebug[39m: [37mAdapter will handle empty schema tools by accepting empty input objects for tool "stagehand_extract".[39m
+2025-03-30 14:57:04:574 [37mdebug[39m: [37mConverting MCP tool "stagehand_observe" to LangChain tool[39m
+2025-03-30 14:57:04:574 [37mdebug[39m: [37mConverting MCP tool "screenshot" to LangChain tool[39m
+2025-03-30 14:57:04:574 [33mwarn[39m: [33mTool "screenshot" has an empty input schema. Some LLMs and agent implementations (especially React agents and Gemini models) require tools to have parameters.[39m
+2025-03-30 14:57:04:574 [37mdebug[39m: [37mAdapter will handle empty schema tools by accepting empty input objects for tool "screenshot".[39m
+2025-03-30 14:57:04:574 [32minfo[39m: [32mSuccessfully loaded 5 tools from server "stagehand"[39m
+2025-03-30 14:57:05:575 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 14:57:05:575 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 14:57:05:575 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_navigate:[39m
+2025-03-30 14:57:07:577 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 14:57:07:577 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 14:57:07:577 [37mdebug[39m: [37mMCP tool stagehand_navigate returned:[39m
+2025-03-30 14:57:07:577 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_navigate:[39m
+2025-03-30 14:57:10:5710 [37mdebug[39m: [37mTool call received for stagehand_extract with input:[39m
+2025-03-30 14:57:10:5710 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 14:57:10:5710 [37mdebug[39m: [37mClosing SSE transport for server "stagehand"[39m
+2025-03-30 14:57:10:5710 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 15:00:15:015 [32minfo[39m: [32mInitializing connection to server "simple_sse_server"...[39m
+2025-03-30 15:00:15:015 [37mdebug[39m: [37mCreating SSE transport for server "simple_sse_server" with URL: http://localhost:3001/sse[39m
+2025-03-30 15:00:15:015 [31merror[39m: [31mFailed to create SSE transport for server "simple_sse_server": MCPClientError: Failed to connect to SSE server "simple_sse_server": Error: SSE error: TypeError: fetch failed: connect ECONNREFUSED ::1:3001, connect ECONNREFUSED 127.0.0.1:3001[39m
+2025-03-30 15:00:15:015 [32minfo[39m: [32mInitializing connection to server "stagehand"...[39m
+2025-03-30 15:00:15:015 [37mdebug[39m: [37mCreating SSE transport for server "stagehand" with URL: http://localhost:3002/stagehand/sse[39m
+2025-03-30 15:00:16:016 [37mdebug[39m: [37mLoading tools for server "stagehand"...[39m
+2025-03-30 15:00:16:016 [37mdebug[39m: [37mListing available MCP tools...[39m
+2025-03-30 15:00:16:016 [32minfo[39m: [32mFound 5 MCP tools[39m
+2025-03-30 15:00:16:016 [37mdebug[39m: [37mConverting MCP tool "stagehand_navigate" to LangChain tool[39m
+2025-03-30 15:00:16:016 [37mdebug[39m: [37mConverting MCP tool "stagehand_act" to LangChain tool[39m
+2025-03-30 15:00:16:016 [37mdebug[39m: [37mConverting MCP tool "stagehand_extract" to LangChain tool[39m
+2025-03-30 15:00:16:016 [33mwarn[39m: [33mTool "stagehand_extract" has an empty input schema. Some LLMs and agent implementations (especially React agents and Gemini models) require tools to have parameters.[39m
+2025-03-30 15:00:16:016 [37mdebug[39m: [37mAdapter will handle empty schema tools by accepting empty input objects for tool "stagehand_extract".[39m
+2025-03-30 15:00:16:016 [37mdebug[39m: [37mConverting MCP tool "stagehand_observe" to LangChain tool[39m
+2025-03-30 15:00:16:016 [37mdebug[39m: [37mConverting MCP tool "screenshot" to LangChain tool[39m
+2025-03-30 15:00:16:016 [33mwarn[39m: [33mTool "screenshot" has an empty input schema. Some LLMs and agent implementations (especially React agents and Gemini models) require tools to have parameters.[39m
+2025-03-30 15:00:16:016 [37mdebug[39m: [37mAdapter will handle empty schema tools by accepting empty input objects for tool "screenshot".[39m
+2025-03-30 15:00:16:016 [32minfo[39m: [32mSuccessfully loaded 5 tools from server "stagehand"[39m
+2025-03-30 15:00:17:017 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 15:00:17:017 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 15:00:17:017 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_navigate:[39m
+2025-03-30 15:00:18:018 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 15:00:18:018 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 15:00:18:018 [37mdebug[39m: [37mMCP tool stagehand_navigate returned:[39m
+2025-03-30 15:00:18:018 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_navigate:[39m
+2025-03-30 15:00:19:019 [37mdebug[39m: [37mTool call received for screenshot with input:[39m
+2025-03-30 15:00:19:019 [37mdebug[39m: [37mTool call received for screenshot with input:[39m
+2025-03-30 15:00:19:019 [37mdebug[39m: [37mFinal parsed input for MCP tool screenshot:[39m
+2025-03-30 15:00:20:020 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 15:00:20:020 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 15:00:20:020 [37mdebug[39m: [37mMCP tool screenshot returned:[39m
+2025-03-30 15:00:20:020 [37mdebug[39m: [37mFinal string result from MCP tool screenshot:[39m
+2025-03-30 15:00:23:023 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 15:00:23:023 [37mdebug[39m: [37mClosing SSE transport for server "stagehand"[39m
+2025-03-30 15:00:23:023 [32minfo[39m: [32mAll MCP connections closed[39m
