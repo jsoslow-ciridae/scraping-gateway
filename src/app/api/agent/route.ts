@@ -17,20 +17,19 @@ const MCP_CONFIG = {
       maxAttempts: 3,
       delayMs: 1000,
     },
-    stagehand: {
-      // Use the port and path configured in Stagehand's index.ts
-      url:
-        process.env.STAGEHAND_MCP_URL || "http://localhost:3002/stagehand/sse", // Use env var if available
-      transport: "sse", // Use SSE transport
-      restart: {
-        // Optional: Configure restart behavior
-        enabled: true,
-        maxAttempts: 5, // More attempts might be needed if the browser session crashes
-        delayMs: 2000,
-      },
-      // Important: Add timeout if Stagehand operations can be long
-      requestTimeoutMs: 120000, // e.g., 2 minutes, adjust as needed
+  },
+  stagehand: {
+    // Use the port and path configured in Stagehand's index.ts
+    url: process.env.STAGEHAND_MCP_URL || "http://localhost:3002/stagehand/sse", // Use env var if available
+    transport: "sse", // Use SSE transport
+    restart: {
+      // Optional: Configure restart behavior
+      enabled: true,
+      maxAttempts: 5, // More attempts might be needed if the browser session crashes
+      delayMs: 2000,
     },
+    // Important: Add timeout if Stagehand operations can be long
+    requestTimeoutMs: 120000, // e.g., 2 minutes, adjust as needed
   },
   // If you had another server (like stagehand), it would be another key here:
   // stagehand: { url: "...", transport: "...", ... },

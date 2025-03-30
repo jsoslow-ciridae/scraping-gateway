@@ -13,3 +13,6 @@
 [31m    "message": "Invalid literal value, expected \"object\""[39m
 [31m  }[39m
 [31m][39m
+2025-03-30 14:29:53:2953 [31merror[39m: [31mFailed to create SSE transport for server "stagehand": MCPClientError: Failed to connect to SSE server "stagehand": TypeError: fetch failed[39m
+2025-03-30 14:34:01:341 [31merror[39m: [31mFailed to create SSE transport for server "stagehand": MCPClientError: Failed to connect to SSE server "stagehand": TypeError: fetch failed[39m
+2025-03-30 14:40:30:4030 [31merror[39m: [31mFailed to create SSE transport for server "stagehand": MCPClientError: Failed to connect to SSE server "stagehand": Error: SSE error: TypeError: fetch failed: connect ECONNREFUSED ::1:3002, connect ECONNREFUSED 127.0.0.1:3002[39m
