@@ -4,6 +4,7 @@ import { MultiServerMCPClient } from "langchainjs-mcp-adapters";
 import { AgentExecutor, createReactAgent } from "langchain/agents";
 import { pull } from "langchain/hub";
 import { PromptTemplate } from "@langchain/core/prompts";
+import { Tool as LangChainTool, DynamicTool } from "@langchain/core/tools"; // Import BaseTool and DynamicTool
 
 // CORRECTED MCP Configuration Structure: Remove the top-level "servers" key
 const MCP_CONFIG = {
@@ -21,15 +22,59 @@ const MCP_CONFIG = {
   // stagehand: { url: "...", transport: "...", ... },
 };
 
+// --- Helper Function to Wrap MCP Tools ---
+function wrapMcpTools(mcpTools: LangChainTool[]): LangChainTool[] {
+  return mcpTools.map((mcpTool) => {
+    if (mcpTool.name === "echo_tool") {
+      console.log("[API Route] Wrapping 'echo_tool'");
+      return new DynamicTool({
+        name: mcpTool.name,
+        description: mcpTool.description,
+        func: async (input: string | any): Promise<string> => {
+          console.log(
+            `[API Route] Wrapper func for ${mcpTool.name} received input:`,
+            input,
+            `(type: ${typeof input})`
+          );
+          let callInput: any;
+          if (typeof input === "string") {
+            callInput = { message: input }; // Wrap string
+            console.log(`[API Route] Wrapping string input to:`, callInput);
+          } else {
+            callInput = input; // Pass others directly
+            console.log(
+              `[API Route] Using non-string input directly:`,
+              callInput
+            );
+          }
+          try {
+            const result = await mcpTool.call(callInput); // Call original tool's logic
+            console.log(`[API Route] Original MCP tool call returned:`, result);
+            return typeof result === "string" ? result : JSON.stringify(result);
+          } catch (e) {
+            console.error(
+              `[API Route] Error calling original ${mcpTool.name}:`,
+              e
+            );
+            return e instanceof Error
+              ? `Error: ${e.message}`
+              : `Error: ${String(e)}`;
+          }
+        },
+      });
+    }
+    return mcpTool;
+  });
+}
+
 export async function POST(req: NextRequest) {
-  console.log("\n--- [API Route] Start Request ---"); // Mark start
+  console.log("\n--- [API Route] Start Request ---");
   let mcpClient: MultiServerMCPClient | null = null;
 
   try {
     const { objective } = await req.json();
     console.log("[API Route] Received objective:", objective);
 
-    // Setup MCP client and tools
     console.log(
       "[API Route] Instantiating MCP Client with config:",
       JSON.stringify(MCP_CONFIG, null, 2)
@@ -38,22 +83,28 @@ export async function POST(req: NextRequest) {
 
     console.log("[API Route] Attempting mcpClient.initializeConnections()...");
     await mcpClient.initializeConnections();
-    // If you reach here, the connection *attempt* likely didn't immediately throw an error visible here.
-    // The connection might still fail async or during tool listing.
     console.log("[API Route] mcpClient.initializeConnections() completed.");
 
     console.log("[API Route] Attempting mcpClient.getTools()...");
-    const mcpTools = mcpClient.getTools();
-    // This logs the tools *known* to the adapter, check if they are populated
+    // --- Apply Double Assertion Here ---
+    const originalMcpTools = mcpClient.getTools() as unknown as LangChainTool[];
+    // --- End Assertion ---
     console.log(
-      `[API Route] mcpClient.getTools() returned ${mcpTools.length} tools.`
+      `[API Route] mcpClient.getTools() returned ${originalMcpTools.length} tools.`
     );
-    mcpTools.forEach((tool) => console.log(`  - Tool: ${tool.name}`)); // Log names
+    originalMcpTools.forEach((tool) =>
+      console.log(`  - Original Tool: ${tool.name}`)
+    );
 
-    if (mcpTools.length === 0) {
-      console.warn(
-        "[API Route] WARNING: No tools loaded from MCP server(s). Check server logs and connection."
-      );
+    // Now this call should work without type errors
+    const wrappedTools = wrapMcpTools(originalMcpTools);
+    console.log(`[API Route] Wrapped tools count: ${wrappedTools.length}`);
+    wrappedTools.forEach((tool) =>
+      console.log(`  - Wrapped Tool: ${tool.name}`)
+    );
+
+    if (wrappedTools.length === 0) {
+      console.warn("[API Route] WARNING: No tools loaded or wrapped.");
     }
 
     // Create model
@@ -64,51 +115,47 @@ export async function POST(req: NextRequest) {
     });
     console.log("[API Route] LLM Model created.");
 
-    // Get the prompt from LangChain Hub
+    // Get prompt
     console.log("[API Route] Pulling prompt from LangChain Hub...");
     const prompt = (await pull("hwchase17/react")) as PromptTemplate;
     console.log("[API Route] Prompt pulled.");
 
-    // Create the agent
-    console.log("[API Route] Creating agent...");
+    // Create agent - USE WRAPPED TOOLS
+    console.log("[API Route] Creating agent with WRAPPED tools...");
     const agent = await createReactAgent({
       llm: model,
-      tools: mcpTools, // Pass the (potentially empty) tools list
+      tools: wrappedTools,
       prompt,
     });
     console.log("[API Route] Agent created.");
 
-    // Create the executor
-    console.log("[API Route] Creating agent executor...");
+    // Create executor - USE WRAPPED TOOLS
+    console.log("[API Route] Creating agent executor with WRAPPED tools...");
     const agentExecutor = AgentExecutor.fromAgentAndTools({
       agent,
-      tools: mcpTools,
-      verbose: true, // Keep verbose LangChain logs
+      tools: wrappedTools,
+      verbose: true,
     });
     console.log("[API Route] Agent executor created.");
 
-    // Run the agent
+    // Run agent
     console.log("[API Route] Invoking agent executor...");
-    const result = await agentExecutor.invoke({
-      input: objective,
-    });
+    const result = await agentExecutor.invoke({ input: objective });
     console.log("[API Route] Agent executor finished.");
 
     console.log("[API Route] Sending successful response.");
-    return NextResponse.json({
-      result: result.output,
-    });
+    return NextResponse.json({ result: result.output });
   } catch (error) {
-    // Log the specific error during MCP setup or agent run
     console.error("[API Route] --- ERROR in POST Handler ---");
     console.error(error);
     console.error("--- End Error ---");
+    // Restore the error response arguments for Error 2
     return NextResponse.json(
       {
         error:
           error instanceof Error ? error.message : "Failed to process request",
       },
-      { status: 500 }
+      { status: 500 } // Add status code back
     );
   } finally {
     console.log("[API Route] Entering finally block.");
@@ -116,11 +163,11 @@ export async function POST(req: NextRequest) {
       console.log("[API Route] Attempting mcpClient.close()...");
       try {
         await mcpClient.close();
-        console.log("[API Route] MCP Client connections closed successfully.");
+        console.log("[API Route] MCP Client closed.");
       } catch (closeError) {
         console.error("[API Route] Error closing MCP Client:", closeError);
       }
     }
-    console.log("--- [API Route] End Request ---"); // Mark end
+    console.log("--- [API Route] End Request ---");
   }
 }

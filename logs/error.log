@@ -1,1 +1,15 @@
 2025-03-30 09:46:34:4634 [31merror[39m: [31mFailed to create SSE transport for server "simple_sse_server": MCPClientError: Failed to connect to SSE server "simple_sse_server": Error: Error POSTing to endpoint (HTTP 400): InternalServerError: stream is not readable[39m
+2025-03-30 09:53:55:5355 [31merror[39m: [31mFailed to load tools from server "simple_sse_server": [[39m
+[31m  {[39m
+[31m    "received": "string",[39m
+[31m    "code": "invalid_literal",[39m
+[31m    "expected": "object",[39m
+[31m    "path": [[39m
+[31m      "tools",[39m
+[31m      0,[39m
+[31m      "inputSchema",[39m
+[31m      "type"[39m
+[31m    ],[39m
+[31m    "message": "Invalid literal value, expected \"object\""[39m
+[31m  }[39m
+[31m][39m
