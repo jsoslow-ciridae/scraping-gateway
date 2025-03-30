@@ -2,16 +2,27 @@ import AgentChat from "./components/AgentChat";
 
 export default function Home() {
   return (
-    <main className="min-h-screen p-4 md:p-8 flex flex-col">
-      <header className="mb-6">
-        <h1 className="text-3xl font-bold">Web Automation Assistant</h1>
-        <p className="text-gray-600">
-          Ask me to perform tasks on the web. I can navigate websites, interact
-          with pages, and help you find information.
-        </p>
-      </header>
+    <main className="min-h-screen flex flex-col">
+      <nav className="border-b bg-white px-4 py-2 flex justify-between items-center">
+        <h1 className="text-xl font-semibold">Standard Intelligence</h1>
+        <button className="p-2 hover:bg-gray-100 rounded-full">
+          <svg
+            className="w-6 h-6 text-gray-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </button>
+      </nav>
 
-      <div className="flex-1 min-h-[70vh]">
+      <div className="flex-1 relative">
         <AgentChat />
       </div>
     </main>
