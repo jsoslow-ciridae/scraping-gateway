@@ -1,0 +1,452 @@
+
+> scraping-gateway@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.2.4 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.50.27:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 563ms
+ ○ Compiling / ...
+ ✓ Compiled / in 689ms
+ GET / 200 in 810ms
+ ✓ Compiled /api/agent in 396ms
+
+--- [API Route] Start Request ---
+(node:99445) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[API Route] Received objective: Use echo_tools to say "I'm a big boy now"
+[API Route] Instantiating MCP Client with config: {
+  "simple_sse_server": {
+    "url": "http://localhost:3001/sse",
+    "transport": "sse",
+    "restart": {
+      "enabled": true,
+      "maxAttempts": 3,
+      "delayMs": 1000
+    }
+  }
+}
+[API Route] Attempting mcpClient.initializeConnections()...
+2025-03-30 10:50:27:5027 [32minfo[39m: [32mInitializing connection to server "simple_sse_server"...[39m
+2025-03-30 10:50:27:5027 [37mdebug[39m: [37mCreating SSE transport for server "simple_sse_server" with URL: http://localhost:3001/sse[39m
+2025-03-30 10:50:27:5027 [37mdebug[39m: [37mLoading tools for server "simple_sse_server"...[39m
+2025-03-30 10:50:27:5027 [37mdebug[39m: [37mListing available MCP tools...[39m
+2025-03-30 10:50:27:5027 [32minfo[39m: [32mFound 1 MCP tools[39m
+2025-03-30 10:50:27:5027 [37mdebug[39m: [37mConverting MCP tool "echo_tool" to LangChain tool[39m
+2025-03-30 10:50:27:5027 [32minfo[39m: [32mSuccessfully loaded 1 tools from server "simple_sse_server"[39m
+[API Route] mcpClient.initializeConnections() completed.
+[API Route] Attempting mcpClient.getTools()...
+[API Route] mcpClient.getTools() returned 1 tools.
+  - Original Tool: echo_tool
+[API Route] Wrapping 'echo_tool' (Wrap Input + Cast Call)
+[API Route] Wrapped tools count: 1
+  - Wrapped Tool: echo_tool
+[API Route] Creating LLM model...
+[API Route] LLM Model created.
+[API Route] Pulling prompt from LangChain Hub...
+[API Route] Prompt pulled.
+[API Route] Creating agent with WRAPPED tools...
+[API Route] Agent created.
+[API Route] Creating agent executor with WRAPPED tools...
+[API Route] Agent executor created.
+[API Route] Invoking agent executor...
+[32m[chain/start][39m [[90m[1m1:chain:AgentExecutor[22m[39m] Entering Chain run with input: {
+  "input": "Use echo_tools to say \"I'm a big boy now\""
+}
+[32m[chain/start][39m [[90m1:chain:AgentExecutor > [1m2:chain:ReactAgent[22m[39m] Entering Chain run with input: {
+  "input": "Use echo_tools to say \"I'm a big boy now\"",
+  "steps": []
+}
+[32m[chain/start][39m [[90m1:chain:AgentExecutor > 2:chain:ReactAgent > [1m3:chain:RunnableAssign[22m[39m] Entering Chain run with input: {
+  "input": ""
+}
+[32m[chain/start][39m [[90m1:chain:AgentExecutor > 2:chain:ReactAgent > 3:chain:RunnableAssign > [1m4:chain:RunnableMap[22m[39m] Entering Chain run with input: {
+  "input": ""
+}
+[32m[chain/start][39m [[90m1:chain:AgentExecutor > 2:chain:ReactAgent > 3:chain:RunnableAssign > 4:chain:RunnableMap > [1m5:chain:RunnableLambda[22m[39m] Entering Chain run with input: {
+  "input": ""
+}
+[36m[chain/end][39m [[90m1:chain:AgentExecutor > 2:chain:ReactAgent > 3:chain:RunnableAssign > 4:chain:RunnableMap > [1m5:chain:RunnableLambda[22m[39m] [1ms] Exiting Chain run with output: {
+  "output": ""
+}
+[36m[chain/end][39m [[90m1:chain:AgentExecutor > 2:chain:ReactAgent > 3:chain:RunnableAssign > [1m4:chain:RunnableMap[22m[39m] [1ms] Exiting Chain run with output: {
+  "agent_scratchpad": ""
+}
+[36m[chain/end][39m [[90m1:chain:AgentExecutor > 2:chain:ReactAgent > [1m3:chain:RunnableAssign[22m[39m] [1ms] Exiting Chain run with output: {
+  "input": "Use echo_tools to say \"I'm a big boy now\"",
+  "steps": [],
+  "agent_scratchpad": ""
+}
+[32m[chain/start][39m [[90m1:chain:AgentExecutor > 2:chain:ReactAgent > [1m6:prompt:PromptTemplate[22m[39m] Entering Chain run with input: {
+  "input": "Use echo_tools to say \"I'm a big boy now\"",
+  "steps": [],
+  "agent_scratchpad": ""
+}
+[36m[chain/end][39m [[90m1:chain:AgentExecutor > 2:chain:ReactAgent > [1m6:prompt:PromptTemplate[22m[39m] [0ms] Exiting Chain run with output: {
+  "lc": 1,
+  "type": "constructor",
+  "id": [
+    "langchain_core",
+    "prompt_values",
+    "StringPromptValue"
+  ],
+  "kwargs": {
+    "value": "Answer the following questions as best you can. You have access to the following tools:\n\necho_tool: Echoes the input message back to the user.\n\nUse the following format:\n\nQuestion: the input question you must answer\nThought: you should always think about what to do\nAction: the action to take, should be one of [echo_tool]\nAction Input: the input to the action\nObservation: the result of the action\n... (this Thought/Action/Action Input/Observation sequence can repeat multiple times if needed)\n\nThought: IMPORTANT: If the previous Observation answers the Question or fulfills the request, you MUST move directly to the Final Answer. Do not repeat the Action if the Observation is sufficient. I now know the final answer.\nFinal Answer: the final answer to the original input question\n\nBegin!\n\nQuestion: Use echo_tools to say \"I'm a big boy now\"\nThought:"
+  }
+}
+[32m[llm/start][39m [[90m1:chain:AgentExecutor > 2:chain:ReactAgent > [1m7:llm:ChatAnthropic[22m[39m] Entering LLM run with input: {
+  "messages": [
+    [
+      {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "HumanMessage"
+        ],
+        "kwargs": {
+          "content": "Answer the following questions as best you can. You have access to the following tools:\n\necho_tool: Echoes the input message back to the user.\n\nUse the following format:\n\nQuestion: the input question you must answer\nThought: you should always think about what to do\nAction: the action to take, should be one of [echo_tool]\nAction Input: the input to the action\nObservation: the result of the action\n... (this Thought/Action/Action Input/Observation sequence can repeat multiple times if needed)\n\nThought: IMPORTANT: If the previous Observation answers the Question or fulfills the request, you MUST move directly to the Final Answer. Do not repeat the Action if the Observation is sufficient. I now know the final answer.\nFinal Answer: the final answer to the original input question\n\nBegin!\n\nQuestion: Use echo_tools to say \"I'm a big boy now\"\nThought:",
+          "additional_kwargs": {},
+          "response_metadata": {}
+        }
+      }
+    ]
+  ]
+}
+[36m[llm/end][39m [[90m1:chain:AgentExecutor > 2:chain:ReactAgent > [1m7:llm:ChatAnthropic[22m[39m] [1.17s] Exiting LLM run with output: {
+  "generations": [
+    [
+      {
+        "text": "Question: Use echo_tools to say \"I'm a big boy now\"\nThought: I need to use the echo_tool to repeat the phrase \"I'm a big boy now\".\nAction: echo_tool\nAction Input: I'm a big boy now",
+        "generationInfo": {},
+        "message": {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessageChunk"
+          ],
+          "kwargs": {
+            "content": "Question: Use echo_tools to say \"I'm a big boy now\"\nThought: I need to use the echo_tool to repeat the phrase \"I'm a big boy now\".\nAction: echo_tool\nAction Input: I'm a big boy now",
+            "additional_kwargs": {
+              "id": "msg_01KbdBWHJ96NvH4FLYQPdJML",
+              "type": "message",
+              "role": "assistant",
+              "model": "claude-3-7-sonnet-20250219",
+              "stop_reason": "stop_sequence",
+              "stop_sequence": "\nObservation:"
+            },
+            "response_metadata": {
+              "usage": {
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0
+              }
+            },
+            "tool_call_chunks": [],
+            "id": "msg_01KbdBWHJ96NvH4FLYQPdJML",
+            "usage_metadata": {
+              "input_tokens": 210,
+              "output_tokens": 61,
+              "total_tokens": 271,
+              "input_token_details": {
+                "cache_read": 0,
+                "cache_creation": 0
+              }
+            },
+            "tool_calls": [],
+            "invalid_tool_calls": []
+          }
+        }
+      }
+    ]
+  ],
+  "llmOutput": {
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 60,
+      "totalTokens": 60
+    }
+  }
+}
+[32m[chain/start][39m [[90m1:chain:AgentExecutor > 2:chain:ReactAgent > [1m8:parser:ReActSingleInputOutputParser[22m[39m] Entering Chain run with input: {
+  "lc": 1,
+  "type": "constructor",
+  "id": [
+    "langchain_core",
+    "messages",
+    "AIMessageChunk"
+  ],
+  "kwargs": {
+    "content": "Question: Use echo_tools to say \"I'm a big boy now\"\nThought: I need to use the echo_tool to repeat the phrase \"I'm a big boy now\".\nAction: echo_tool\nAction Input: I'm a big boy now",
+    "additional_kwargs": {
+      "id": "msg_01KbdBWHJ96NvH4FLYQPdJML",
+      "type": "message",
+      "role": "assistant",
+      "model": "claude-3-7-sonnet-20250219",
+      "stop_reason": "stop_sequence",
+      "stop_sequence": "\nObservation:"
+    },
+    "response_metadata": {
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0
+      }
+    },
+    "tool_call_chunks": [],
+    "id": "msg_01KbdBWHJ96NvH4FLYQPdJML",
+    "usage_metadata": {
+      "input_tokens": 210,
+      "output_tokens": 61,
+      "total_tokens": 271,
+      "input_token_details": {
+        "cache_read": 0,
+        "cache_creation": 0
+      }
+    },
+    "tool_calls": [],
+    "invalid_tool_calls": []
+  }
+}
+[36m[chain/end][39m [[90m1:chain:AgentExecutor > 2:chain:ReactAgent > [1m8:parser:ReActSingleInputOutputParser[22m[39m] [0ms] Exiting Chain run with output: {
+  "tool": "echo_tool",
+  "toolInput": "I'm a big boy now",
+  "log": "Question: Use echo_tools to say \"I'm a big boy now\"\nThought: I need to use the echo_tool to repeat the phrase \"I'm a big boy now\".\nAction: echo_tool\nAction Input: I'm a big boy now"
+}
+[36m[chain/end][39m [[90m1:chain:AgentExecutor > [1m2:chain:ReactAgent[22m[39m] [1.18s] Exiting Chain run with output: {
+  "tool": "echo_tool",
+  "toolInput": "I'm a big boy now",
+  "log": "Question: Use echo_tools to say \"I'm a big boy now\"\nThought: I need to use the echo_tool to repeat the phrase \"I'm a big boy now\".\nAction: echo_tool\nAction Input: I'm a big boy now"
+}
+[34m[agent/action][39m [[90m[1m1:chain:AgentExecutor[22m[39m] Agent selected action: {
+  "tool": "echo_tool",
+  "toolInput": "I'm a big boy now",
+  "log": "Question: Use echo_tools to say \"I'm a big boy now\"\nThought: I need to use the echo_tool to repeat the phrase \"I'm a big boy now\".\nAction: echo_tool\nAction Input: I'm a big boy now"
+}
+[32m[tool/start][39m [[90m1:chain:AgentExecutor > [1m9:tool:echo_tool[22m[39m] Entering Tool run with input: "I'm a big boy now"
+[API Route] Wrapper func for echo_tool received input: I'm a big boy now (type: string)
+[API Route] Wrapping string input to: { message: "I'm a big boy now" }
+[API Route] Calling original mcpTool.call with STRUCTURED input: { message: "I'm a big boy now" }
+2025-03-30 10:50:28:5028 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:50:28:5028 [37mdebug[39m: [37mTool call received for echo_tool with input: I'm a big boy now[39m
+2025-03-30 10:50:28:5028 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: I'm a big boy now[39m
+2025-03-30 10:50:28:5028 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:50:28:5028 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:50:28:5028 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:50:28:5028 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+[API Route] Original MCP tool call returned: Echo: I'm a big boy now
+[36m[tool/end][39m [[90m1:chain:AgentExecutor > [1m9:tool:echo_tool[22m[39m] [5ms] Exiting Tool run with output: "Echo: I'm a big boy now"
+[32m[chain/start][39m [[90m1:chain:AgentExecutor > [1m10:chain:ReactAgent[22m[39m] Entering Chain run with input: {
+  "input": "Use echo_tools to say \"I'm a big boy now\"",
+  "steps": [
+    {
+      "action": {
+        "tool": "echo_tool",
+        "toolInput": "I'm a big boy now",
+        "log": "Question: Use echo_tools to say \"I'm a big boy now\"\nThought: I need to use the echo_tool to repeat the phrase \"I'm a big boy now\".\nAction: echo_tool\nAction Input: I'm a big boy now"
+      },
+      "observation": "Echo: I'm a big boy now"
+    }
+  ]
+}
+[32m[chain/start][39m [[90m1:chain:AgentExecutor > 10:chain:ReactAgent > [1m11:chain:RunnableAssign[22m[39m] Entering Chain run with input: {
+  "input": ""
+}
+[32m[chain/start][39m [[90m1:chain:AgentExecutor > 10:chain:ReactAgent > 11:chain:RunnableAssign > [1m12:chain:RunnableMap[22m[39m] Entering Chain run with input: {
+  "input": ""
+}
+[32m[chain/start][39m [[90m1:chain:AgentExecutor > 10:chain:ReactAgent > 11:chain:RunnableAssign > 12:chain:RunnableMap > [1m13:chain:RunnableLambda[22m[39m] Entering Chain run with input: {
+  "input": ""
+}
+[36m[chain/end][39m [[90m1:chain:AgentExecutor > 10:chain:ReactAgent > 11:chain:RunnableAssign > 12:chain:RunnableMap > [1m13:chain:RunnableLambda[22m[39m] [1ms] Exiting Chain run with output: {
+  "output": "Question: Use echo_tools to say \"I'm a big boy now\"\nThought: I need to use the echo_tool to repeat the phrase \"I'm a big boy now\".\nAction: echo_tool\nAction Input: I'm a big boy now\n\nObservation: Echo: I'm a big boy now\nThought: "
+}
+[36m[chain/end][39m [[90m1:chain:AgentExecutor > 10:chain:ReactAgent > 11:chain:RunnableAssign > [1m12:chain:RunnableMap[22m[39m] [1ms] Exiting Chain run with output: {
+  "agent_scratchpad": "Question: Use echo_tools to say \"I'm a big boy now\"\nThought: I need to use the echo_tool to repeat the phrase \"I'm a big boy now\".\nAction: echo_tool\nAction Input: I'm a big boy now\n\nObservation: Echo: I'm a big boy now\nThought: "
+}
+[36m[chain/end][39m [[90m1:chain:AgentExecutor > 10:chain:ReactAgent > [1m11:chain:RunnableAssign[22m[39m] [1ms] Exiting Chain run with output: {
+  "input": "Use echo_tools to say \"I'm a big boy now\"",
+  "steps": [
+    {
+      "action": {
+        "tool": "echo_tool",
+        "toolInput": "I'm a big boy now",
+        "log": "Question: Use echo_tools to say \"I'm a big boy now\"\nThought: I need to use the echo_tool to repeat the phrase \"I'm a big boy now\".\nAction: echo_tool\nAction Input: I'm a big boy now"
+      },
+      "observation": "Echo: I'm a big boy now"
+    }
+  ],
+  "agent_scratchpad": "Question: Use echo_tools to say \"I'm a big boy now\"\nThought: I need to use the echo_tool to repeat the phrase \"I'm a big boy now\".\nAction: echo_tool\nAction Input: I'm a big boy now\n\nObservation: Echo: I'm a big boy now\nThought: "
+}
+[32m[chain/start][39m [[90m1:chain:AgentExecutor > 10:chain:ReactAgent > [1m14:prompt:PromptTemplate[22m[39m] Entering Chain run with input: {
+  "input": "Use echo_tools to say \"I'm a big boy now\"",
+  "steps": [
+    {
+      "action": {
+        "tool": "echo_tool",
+        "toolInput": "I'm a big boy now",
+        "log": "Question: Use echo_tools to say \"I'm a big boy now\"\nThought: I need to use the echo_tool to repeat the phrase \"I'm a big boy now\".\nAction: echo_tool\nAction Input: I'm a big boy now"
+      },
+      "observation": "Echo: I'm a big boy now"
+    }
+  ],
+  "agent_scratchpad": "Question: Use echo_tools to say \"I'm a big boy now\"\nThought: I need to use the echo_tool to repeat the phrase \"I'm a big boy now\".\nAction: echo_tool\nAction Input: I'm a big boy now\n\nObservation: Echo: I'm a big boy now\nThought: "
+}
+[36m[chain/end][39m [[90m1:chain:AgentExecutor > 10:chain:ReactAgent > [1m14:prompt:PromptTemplate[22m[39m] [0ms] Exiting Chain run with output: {
+  "lc": 1,
+  "type": "constructor",
+  "id": [
+    "langchain_core",
+    "prompt_values",
+    "StringPromptValue"
+  ],
+  "kwargs": {
+    "value": "Answer the following questions as best you can. You have access to the following tools:\n\necho_tool: Echoes the input message back to the user.\n\nUse the following format:\n\nQuestion: the input question you must answer\nThought: you should always think about what to do\nAction: the action to take, should be one of [echo_tool]\nAction Input: the input to the action\nObservation: the result of the action\n... (this Thought/Action/Action Input/Observation sequence can repeat multiple times if needed)\n\nThought: IMPORTANT: If the previous Observation answers the Question or fulfills the request, you MUST move directly to the Final Answer. Do not repeat the Action if the Observation is sufficient. I now know the final answer.\nFinal Answer: the final answer to the original input question\n\nBegin!\n\nQuestion: Use echo_tools to say \"I'm a big boy now\"\nThought:Question: Use echo_tools to say \"I'm a big boy now\"\nThought: I need to use the echo_tool to repeat the phrase \"I'm a big boy now\".\nAction: echo_tool\nAction Input: I'm a big boy now\n\nObservation: Echo: I'm a big boy now\nThought: "
+  }
+}
+[32m[llm/start][39m [[90m1:chain:AgentExecutor > 10:chain:ReactAgent > [1m15:llm:ChatAnthropic[22m[39m] Entering LLM run with input: {
+  "messages": [
+    [
+      {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "HumanMessage"
+        ],
+        "kwargs": {
+          "content": "Answer the following questions as best you can. You have access to the following tools:\n\necho_tool: Echoes the input message back to the user.\n\nUse the following format:\n\nQuestion: the input question you must answer\nThought: you should always think about what to do\nAction: the action to take, should be one of [echo_tool]\nAction Input: the input to the action\nObservation: the result of the action\n... (this Thought/Action/Action Input/Observation sequence can repeat multiple times if needed)\n\nThought: IMPORTANT: If the previous Observation answers the Question or fulfills the request, you MUST move directly to the Final Answer. Do not repeat the Action if the Observation is sufficient. I now know the final answer.\nFinal Answer: the final answer to the original input question\n\nBegin!\n\nQuestion: Use echo_tools to say \"I'm a big boy now\"\nThought:Question: Use echo_tools to say \"I'm a big boy now\"\nThought: I need to use the echo_tool to repeat the phrase \"I'm a big boy now\".\nAction: echo_tool\nAction Input: I'm a big boy now\n\nObservation: Echo: I'm a big boy now\nThought: ",
+          "additional_kwargs": {},
+          "response_metadata": {}
+        }
+      }
+    ]
+  ]
+}
+[36m[llm/end][39m [[90m1:chain:AgentExecutor > 10:chain:ReactAgent > [1m15:llm:ChatAnthropic[22m[39m] [2.37s] Exiting LLM run with output: {
+  "generations": [
+    [
+      {
+        "text": "Thought: The echo_tool successfully echoed \"I'm a big boy now\". This fulfills the request to use the echo_tool to say this phrase. I now have the information needed to provide the final answer.\n\nFinal Answer: I used the echo_tool and it returned: \"Echo: I'm a big boy now\"",
+        "generationInfo": {},
+        "message": {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessageChunk"
+          ],
+          "kwargs": {
+            "content": "Thought: The echo_tool successfully echoed \"I'm a big boy now\". This fulfills the request to use the echo_tool to say this phrase. I now have the information needed to provide the final answer.\n\nFinal Answer: I used the echo_tool and it returned: \"Echo: I'm a big boy now\"",
+            "additional_kwargs": {
+              "id": "msg_015J6rVH7GBANcGCQisqLscZ",
+              "type": "message",
+              "role": "assistant",
+              "model": "claude-3-7-sonnet-20250219",
+              "stop_reason": "end_turn",
+              "stop_sequence": null
+            },
+            "response_metadata": {
+              "usage": {
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0
+              }
+            },
+            "tool_call_chunks": [],
+            "id": "msg_015J6rVH7GBANcGCQisqLscZ",
+            "usage_metadata": {
+              "input_tokens": 283,
+              "output_tokens": 82,
+              "total_tokens": 365,
+              "input_token_details": {
+                "cache_read": 0,
+                "cache_creation": 0
+              }
+            },
+            "tool_calls": [],
+            "invalid_tool_calls": []
+          }
+        }
+      }
+    ]
+  ],
+  "llmOutput": {
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 73,
+      "totalTokens": 73
+    }
+  }
+}
+[32m[chain/start][39m [[90m1:chain:AgentExecutor > 10:chain:ReactAgent > [1m16:parser:ReActSingleInputOutputParser[22m[39m] Entering Chain run with input: {
+  "lc": 1,
+  "type": "constructor",
+  "id": [
+    "langchain_core",
+    "messages",
+    "AIMessageChunk"
+  ],
+  "kwargs": {
+    "content": "Thought: The echo_tool successfully echoed \"I'm a big boy now\". This fulfills the request to use the echo_tool to say this phrase. I now have the information needed to provide the final answer.\n\nFinal Answer: I used the echo_tool and it returned: \"Echo: I'm a big boy now\"",
+    "additional_kwargs": {
+      "id": "msg_015J6rVH7GBANcGCQisqLscZ",
+      "type": "message",
+      "role": "assistant",
+      "model": "claude-3-7-sonnet-20250219",
+      "stop_reason": "end_turn",
+      "stop_sequence": null
+    },
+    "response_metadata": {
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0
+      }
+    },
+    "tool_call_chunks": [],
+    "id": "msg_015J6rVH7GBANcGCQisqLscZ",
+    "usage_metadata": {
+      "input_tokens": 283,
+      "output_tokens": 82,
+      "total_tokens": 365,
+      "input_token_details": {
+        "cache_read": 0,
+        "cache_creation": 0
+      }
+    },
+    "tool_calls": [],
+    "invalid_tool_calls": []
+  }
+}
+[36m[chain/end][39m [[90m1:chain:AgentExecutor > 10:chain:ReactAgent > [1m16:parser:ReActSingleInputOutputParser[22m[39m] [0ms] Exiting Chain run with output: {
+  "returnValues": {
+    "output": "I used the echo_tool and it returned: \"Echo: I'm a big boy now\""
+  },
+  "log": "Thought: The echo_tool successfully echoed \"I'm a big boy now\". This fulfills the request to use the echo_tool to say this phrase. I now have the information needed to provide the final answer.\n\nFinal Answer: I used the echo_tool and it returned: \"Echo: I'm a big boy now\""
+}
+[36m[chain/end][39m [[90m1:chain:AgentExecutor > [1m10:chain:ReactAgent[22m[39m] [2.37s] Exiting Chain run with output: {
+  "returnValues": {
+    "output": "I used the echo_tool and it returned: \"Echo: I'm a big boy now\""
+  },
+  "log": "Thought: The echo_tool successfully echoed \"I'm a big boy now\". This fulfills the request to use the echo_tool to say this phrase. I now have the information needed to provide the final answer.\n\nFinal Answer: I used the echo_tool and it returned: \"Echo: I'm a big boy now\""
+}
+[36m[chain/end][39m [[90m[1m1:chain:AgentExecutor[22m[39m] [3.56s] Exiting Chain run with output: {
+  "input": "Use echo_tools to say \"I'm a big boy now\"",
+  "output": "I used the echo_tool and it returned: \"Echo: I'm a big boy now\""
+}
+[API Route] Agent executor finished.
+[API Route] Sending successful response.
+[API Route] Entering finally block.
+[API Route] Attempting mcpClient.close()...
+2025-03-30 10:50:30:5030 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 10:50:30:5030 [37mdebug[39m: [37mClosing SSE transport for server "simple_sse_server"[39m
+2025-03-30 10:50:30:5030 [32minfo[39m: [32mAll MCP connections closed[39m
+[API Route] MCP Client closed.
+--- [API Route] End Request ---
+ POST /api/agent 200 in 4073ms
+[?25h

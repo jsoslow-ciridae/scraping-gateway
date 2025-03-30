@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { ChatAnthropic } from "@langchain/anthropic";
 import { MultiServerMCPClient } from "langchainjs-mcp-adapters";
 import { AgentExecutor, createReactAgent } from "langchain/agents";
-import { pull } from "langchain/hub";
+// import { pull } from "langchain/hub";
 import { PromptTemplate } from "@langchain/core/prompts";
 import { Tool as LangChainTool, DynamicTool } from "@langchain/core/tools"; // Import BaseTool and DynamicTool
 
@@ -22,33 +22,78 @@ const MCP_CONFIG = {
   // stagehand: { url: "...", transport: "...", ... },
 };
 
+const MODIFIED_REACT_PROMPT_TEMPLATE = `Answer the following questions as best you can. You have access to the following tools:
+
+{tools}
+
+Use the following format:
+
+Question: the input question you must answer
+Thought: you should always think about what to do
+Action: the action to take, should be one of [{tool_names}]
+Action Input: the input to the action
+Observation: the result of the action
+... (this Thought/Action/Action Input/Observation sequence can repeat multiple times if needed)
+
+Thought: IMPORTANT: If the previous Observation answers the Question or fulfills the request, you MUST move directly to the Final Answer. Do not repeat the Action if the Observation is sufficient. I now know the final answer.
+Final Answer: the final answer to the original input question
+
+Begin!
+
+Question: {input}
+Thought:{agent_scratchpad}`;
+
 // --- Helper Function to Wrap MCP Tools ---
 function wrapMcpTools(mcpTools: LangChainTool[]): LangChainTool[] {
   return mcpTools.map((mcpTool) => {
     if (mcpTool.name === "echo_tool") {
-      console.log("[API Route] Wrapping 'echo_tool'");
+      console.log("[API Route] Wrapping 'echo_tool' (Wrap Input + Cast Call)");
       return new DynamicTool({
         name: mcpTool.name,
         description: mcpTool.description,
-        func: async (input: string | any): Promise<string> => {
+        func: async (input: unknown): Promise<string> => {
           console.log(
             `[API Route] Wrapper func for ${mcpTool.name} received input:`,
             input,
             `(type: ${typeof input})`
           );
-          let callInput: any;
+
+          type EchoToolInput = { message: string };
+          let callInput: EchoToolInput; // Object tool expects
+
           if (typeof input === "string") {
-            callInput = { message: input }; // Wrap string
+            callInput = { message: input }; // Wrap string into object
             console.log(`[API Route] Wrapping string input to:`, callInput);
+          } else if (
+            typeof input === "object" &&
+            input !== null &&
+            "message" in input &&
+            typeof (input as any).message === "string"
+          ) {
+            callInput = input as EchoToolInput; // Use object directly
+            console.log(`[API Route] Using object input directly:`, callInput);
           } else {
-            callInput = input; // Pass others directly
-            console.log(
-              `[API Route] Using non-string input directly:`,
-              callInput
+            console.error(
+              `[API Route] Unexpected input type for ${
+                mcpTool.name
+              }: ${typeof input}`,
+              input
+            );
+            throw new Error(
+              `Tool ${
+                mcpTool.name
+              } received unexpected input type: ${typeof input}`
             );
           }
+
           try {
-            const result = await mcpTool.call(callInput); // Call original tool's logic
+            // Call original tool, passing the STRUCTURED object, use 'as any'
+            // to bypass the restrictive TypeScript signature of .call()
+            console.log(
+              `[API Route] Calling original mcpTool.call with STRUCTURED input:`,
+              callInput
+            );
+            const result = await mcpTool.call(callInput as any); // <-- Use 'as any' assertion HERE
             console.log(`[API Route] Original MCP tool call returned:`, result);
             return typeof result === "string" ? result : JSON.stringify(result);
           } catch (e) {
@@ -63,7 +108,7 @@ function wrapMcpTools(mcpTools: LangChainTool[]): LangChainTool[] {
         },
       });
     }
-    return mcpTool;
+    return mcpTool; // Return other tools unmodified
   });
 }
 
@@ -117,7 +162,7 @@ export async function POST(req: NextRequest) {
 
     // Get prompt
     console.log("[API Route] Pulling prompt from LangChain Hub...");
-    const prompt = (await pull("hwchase17/react")) as PromptTemplate;
+    const prompt = PromptTemplate.fromTemplate(MODIFIED_REACT_PROMPT_TEMPLATE);
     console.log("[API Route] Prompt pulled.");
 
     // Create agent - USE WRAPPED TOOLS

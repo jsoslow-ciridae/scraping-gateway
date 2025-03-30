@@ -178,3 +178,287 @@
 2025-03-30 10:11:18:1118 [32minfo[39m: [32mClosing all MCP connections...[39m
 2025-03-30 10:11:18:1118 [37mdebug[39m: [37mClosing SSE transport for server "simple_sse_server"[39m
 2025-03-30 10:11:18:1118 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 10:14:20:1420 [32minfo[39m: [32mInitializing connection to server "simple_sse_server"...[39m
+2025-03-30 10:14:20:1420 [37mdebug[39m: [37mCreating SSE transport for server "simple_sse_server" with URL: http://localhost:3001/sse[39m
+2025-03-30 10:14:20:1420 [37mdebug[39m: [37mLoading tools for server "simple_sse_server"...[39m
+2025-03-30 10:14:20:1420 [37mdebug[39m: [37mListing available MCP tools...[39m
+2025-03-30 10:14:20:1420 [32minfo[39m: [32mFound 1 MCP tools[39m
+2025-03-30 10:14:20:1420 [37mdebug[39m: [37mConverting MCP tool "echo_tool" to LangChain tool[39m
+2025-03-30 10:14:20:1420 [32minfo[39m: [32mSuccessfully loaded 1 tools from server "simple_sse_server"[39m
+2025-03-30 10:14:22:1422 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:14:22:1422 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:14:22:1422 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:14:22:1422 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:14:22:1422 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:14:22:1422 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:14:22:1422 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:14:23:1423 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:14:23:1423 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:14:23:1423 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:14:23:1423 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:14:23:1423 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:14:23:1423 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:14:23:1423 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:14:25:1425 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:14:25:1425 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:14:25:1425 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:14:25:1425 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:14:25:1425 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:14:25:1425 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:14:25:1425 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:14:26:1426 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:14:26:1426 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:14:26:1426 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:14:26:1426 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:14:26:1426 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:14:26:1426 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:14:26:1426 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:14:28:1428 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:14:28:1428 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:14:28:1428 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:14:28:1428 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:14:28:1428 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:14:28:1428 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:14:28:1428 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:14:30:1430 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:14:30:1430 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:14:30:1430 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:14:30:1430 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:14:30:1430 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:14:30:1430 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:14:30:1430 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:14:31:1431 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:14:31:1431 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:14:31:1431 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:14:31:1431 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:14:31:1431 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:14:31:1431 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:14:31:1431 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:14:33:1433 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:14:33:1433 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:14:33:1433 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:14:33:1433 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:14:33:1433 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:14:33:1433 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:14:33:1433 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:14:34:1434 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:14:34:1434 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:14:34:1434 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:14:34:1434 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:14:34:1434 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:14:34:1434 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:14:34:1434 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:14:36:1436 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:14:36:1436 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:14:36:1436 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:14:36:1436 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:14:36:1436 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:14:36:1436 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:14:36:1436 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:14:37:1437 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:14:37:1437 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:14:37:1437 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:14:37:1437 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:14:37:1437 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:14:37:1437 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:14:37:1437 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:14:39:1439 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:14:39:1439 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:14:39:1439 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:14:39:1439 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:14:39:1439 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:14:39:1439 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:14:39:1439 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:14:41:1441 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:14:41:1441 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:14:41:1441 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:14:41:1441 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:14:41:1441 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:14:41:1441 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:14:41:1441 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:14:42:1442 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:14:42:1442 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:14:42:1442 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:14:42:1442 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:14:42:1442 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:14:42:1442 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:14:42:1442 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:14:44:1444 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:14:44:1444 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:14:44:1444 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:14:44:1444 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:14:44:1444 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:14:44:1444 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:14:44:1444 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:14:44:1444 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 10:14:44:1444 [37mdebug[39m: [37mClosing SSE transport for server "simple_sse_server"[39m
+2025-03-30 10:14:44:1444 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 10:43:05:435 [32minfo[39m: [32mInitializing connection to server "simple_sse_server"...[39m
+2025-03-30 10:43:05:435 [37mdebug[39m: [37mCreating SSE transport for server "simple_sse_server" with URL: http://localhost:3001/sse[39m
+2025-03-30 10:43:05:435 [37mdebug[39m: [37mLoading tools for server "simple_sse_server"...[39m
+2025-03-30 10:43:05:435 [37mdebug[39m: [37mListing available MCP tools...[39m
+2025-03-30 10:43:05:435 [32minfo[39m: [32mFound 1 MCP tools[39m
+2025-03-30 10:43:05:435 [37mdebug[39m: [37mConverting MCP tool "echo_tool" to LangChain tool[39m
+2025-03-30 10:43:05:435 [32minfo[39m: [32mSuccessfully loaded 1 tools from server "simple_sse_server"[39m
+2025-03-30 10:43:06:436 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:43:08:438 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:43:09:439 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:43:09:439 [37mdebug[39m: [37mDetected React agent string input pattern: "{message: Hello World}"[39m
+2025-03-30 10:43:09:439 [37mdebug[39m: [37mSuccessfully parsed React agent input to: {"message":"Hello World"}[39m
+2025-03-30 10:43:09:439 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:43:09:439 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:43:09:439 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:43:09:439 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:43:09:439 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:43:09:439 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:43:11:4311 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:43:11:4311 [37mdebug[39m: [37mDetected React agent string input pattern: "{message: Hello World}"[39m
+2025-03-30 10:43:11:4311 [37mdebug[39m: [37mSuccessfully parsed React agent input to: {"message":"Hello World"}[39m
+2025-03-30 10:43:11:4311 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:43:11:4311 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:43:11:4311 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:43:11:4311 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:43:11:4311 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:43:11:4311 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:43:13:4313 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:43:13:4313 [37mdebug[39m: [37mDetected React agent string input pattern: "{message: Hello World}"[39m
+2025-03-30 10:43:13:4313 [37mdebug[39m: [37mSuccessfully parsed React agent input to: {"message":"Hello World"}[39m
+2025-03-30 10:43:13:4313 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:43:13:4313 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:43:13:4313 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:43:13:4313 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:43:13:4313 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:43:13:4313 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:43:14:4314 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:43:14:4314 [37mdebug[39m: [37mDetected React agent string input pattern: "{message: Hello World}"[39m
+2025-03-30 10:43:14:4314 [37mdebug[39m: [37mSuccessfully parsed React agent input to: {"message":"Hello World"}[39m
+2025-03-30 10:43:14:4314 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:43:14:4314 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:43:14:4314 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:43:14:4314 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:43:14:4314 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:43:14:4314 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:43:16:4316 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:43:16:4316 [37mdebug[39m: [37mDetected React agent string input pattern: "{message: Hello World}"[39m
+2025-03-30 10:43:16:4316 [37mdebug[39m: [37mSuccessfully parsed React agent input to: {"message":"Hello World"}[39m
+2025-03-30 10:43:16:4316 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:43:16:4316 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:43:16:4316 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:43:16:4316 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:43:16:4316 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:43:16:4316 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:43:17:4317 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:43:17:4317 [37mdebug[39m: [37mDetected React agent string input pattern: "{message: Hello World}"[39m
+2025-03-30 10:43:17:4317 [37mdebug[39m: [37mSuccessfully parsed React agent input to: {"message":"Hello World"}[39m
+2025-03-30 10:43:17:4317 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:43:17:4317 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:43:17:4317 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:43:17:4317 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:43:17:4317 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:43:17:4317 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:43:19:4319 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:43:19:4319 [37mdebug[39m: [37mDetected React agent string input pattern: "{message: Hello World}"[39m
+2025-03-30 10:43:19:4319 [37mdebug[39m: [37mSuccessfully parsed React agent input to: {"message":"Hello World"}[39m
+2025-03-30 10:43:19:4319 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:43:19:4319 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:43:19:4319 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:43:19:4319 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:43:19:4319 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:43:19:4319 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:43:21:4321 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:43:21:4321 [37mdebug[39m: [37mDetected React agent string input pattern: "{message: Hello World}"[39m
+2025-03-30 10:43:21:4321 [37mdebug[39m: [37mSuccessfully parsed React agent input to: {"message":"Hello World"}[39m
+2025-03-30 10:43:21:4321 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:43:21:4321 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:43:21:4321 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:43:21:4321 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:43:21:4321 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:43:21:4321 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:43:23:4323 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:43:23:4323 [37mdebug[39m: [37mDetected React agent string input pattern: "{message: Hello World}"[39m
+2025-03-30 10:43:23:4323 [37mdebug[39m: [37mSuccessfully parsed React agent input to: {"message":"Hello World"}[39m
+2025-03-30 10:43:23:4323 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:43:23:4323 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:43:23:4323 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:43:23:4323 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:43:23:4323 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:43:23:4323 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:43:25:4325 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:43:25:4325 [37mdebug[39m: [37mDetected React agent string input pattern: "{message: Hello World}"[39m
+2025-03-30 10:43:25:4325 [37mdebug[39m: [37mSuccessfully parsed React agent input to: {"message":"Hello World"}[39m
+2025-03-30 10:43:25:4325 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:43:25:4325 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:43:25:4325 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:43:25:4325 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:43:25:4325 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:43:25:4325 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:43:27:4327 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:43:27:4327 [37mdebug[39m: [37mDetected React agent string input pattern: "{message: Hello World}"[39m
+2025-03-30 10:43:27:4327 [37mdebug[39m: [37mSuccessfully parsed React agent input to: {"message":"Hello World"}[39m
+2025-03-30 10:43:27:4327 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:43:27:4327 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:43:27:4327 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:43:27:4327 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:43:27:4327 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:43:27:4327 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:43:29:4329 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:43:29:4329 [37mdebug[39m: [37mDetected React agent string input pattern: "{message: Hello World}"[39m
+2025-03-30 10:43:29:4329 [37mdebug[39m: [37mSuccessfully parsed React agent input to: {"message":"Hello World"}[39m
+2025-03-30 10:43:29:4329 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:43:29:4329 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:43:29:4329 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:43:29:4329 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:43:29:4329 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:43:29:4329 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:43:31:4331 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:43:31:4331 [37mdebug[39m: [37mDetected React agent string input pattern: "{message: Hello World}"[39m
+2025-03-30 10:43:31:4331 [37mdebug[39m: [37mSuccessfully parsed React agent input to: {"message":"Hello World"}[39m
+2025-03-30 10:43:31:4331 [37mdebug[39m: [37mTool call received for echo_tool with input: Hello World[39m
+2025-03-30 10:43:31:4331 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: Hello World[39m
+2025-03-30 10:43:31:4331 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:43:31:4331 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:43:31:4331 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:43:31:4331 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:43:31:4331 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 10:43:31:4331 [37mdebug[39m: [37mClosing SSE transport for server "simple_sse_server"[39m
+2025-03-30 10:43:31:4331 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 10:46:38:4638 [32minfo[39m: [32mInitializing connection to server "simple_sse_server"...[39m
+2025-03-30 10:46:38:4638 [37mdebug[39m: [37mCreating SSE transport for server "simple_sse_server" with URL: http://localhost:3001/sse[39m
+2025-03-30 10:46:38:4638 [37mdebug[39m: [37mLoading tools for server "simple_sse_server"...[39m
+2025-03-30 10:46:38:4638 [37mdebug[39m: [37mListing available MCP tools...[39m
+2025-03-30 10:46:38:4638 [32minfo[39m: [32mFound 1 MCP tools[39m
+2025-03-30 10:46:38:4638 [37mdebug[39m: [37mConverting MCP tool "echo_tool" to LangChain tool[39m
+2025-03-30 10:46:38:4638 [32minfo[39m: [32mSuccessfully loaded 1 tools from server "simple_sse_server"[39m
+2025-03-30 10:46:39:4639 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:46:41:4641 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:46:43:4643 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:46:44:4644 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:46:46:4646 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:46:46:4646 [37mdebug[39m: [37mDetected React agent string input pattern: "{message: hello world}"[39m
+2025-03-30 10:46:46:4646 [37mdebug[39m: [37mSuccessfully parsed React agent input to: {"message":"hello world"}[39m
+2025-03-30 10:46:46:4646 [37mdebug[39m: [37mTool call received for echo_tool with input: hello world[39m
+2025-03-30 10:46:46:4646 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: hello world[39m
+2025-03-30 10:46:46:4646 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:46:46:4646 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:46:46:4646 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:46:46:4646 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:46:48:4648 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 10:46:48:4648 [37mdebug[39m: [37mClosing SSE transport for server "simple_sse_server"[39m
+2025-03-30 10:46:48:4648 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 10:50:27:5027 [32minfo[39m: [32mInitializing connection to server "simple_sse_server"...[39m
+2025-03-30 10:50:27:5027 [37mdebug[39m: [37mCreating SSE transport for server "simple_sse_server" with URL: http://localhost:3001/sse[39m
+2025-03-30 10:50:27:5027 [37mdebug[39m: [37mLoading tools for server "simple_sse_server"...[39m
+2025-03-30 10:50:27:5027 [37mdebug[39m: [37mListing available MCP tools...[39m
+2025-03-30 10:50:27:5027 [32minfo[39m: [32mFound 1 MCP tools[39m
+2025-03-30 10:50:27:5027 [37mdebug[39m: [37mConverting MCP tool "echo_tool" to LangChain tool[39m
+2025-03-30 10:50:27:5027 [32minfo[39m: [32mSuccessfully loaded 1 tools from server "simple_sse_server"[39m
+2025-03-30 10:50:28:5028 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 10:50:28:5028 [37mdebug[39m: [37mTool call received for echo_tool with input: I'm a big boy now[39m
+2025-03-30 10:50:28:5028 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: I'm a big boy now[39m
+2025-03-30 10:50:28:5028 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 10:50:28:5028 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 10:50:28:5028 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 10:50:28:5028 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 10:50:30:5030 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 10:50:30:5030 [37mdebug[39m: [37mClosing SSE transport for server "simple_sse_server"[39m
+2025-03-30 10:50:30:5030 [32minfo[39m: [32mAll MCP connections closed[39m
