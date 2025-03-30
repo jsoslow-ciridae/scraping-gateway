@@ -748,3 +748,239 @@
 2025-03-30 15:59:44:5944 [37mdebug[39m: [37mClosing SSE transport for server "simple_sse_server"[39m
 2025-03-30 15:59:44:5944 [37mdebug[39m: [37mClosing SSE transport for server "stagehand"[39m
 2025-03-30 15:59:44:5944 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 16:06:53:653 [33mwarn[39m: [33mNo connections to initialize[39m
+2025-03-30 16:06:56:656 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 16:06:56:656 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 16:07:02:72 [33mwarn[39m: [33mNo connections to initialize[39m
+2025-03-30 16:07:05:75 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 16:07:05:75 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 16:07:22:722 [32minfo[39m: [32mInitializing connection to server "simple_sse_server"...[39m
+2025-03-30 16:07:22:722 [37mdebug[39m: [37mCreating SSE transport for server "simple_sse_server" with URL: http://localhost:3001/sse[39m
+2025-03-30 16:07:22:722 [37mdebug[39m: [37mLoading tools for server "simple_sse_server"...[39m
+2025-03-30 16:07:22:722 [37mdebug[39m: [37mListing available MCP tools...[39m
+2025-03-30 16:07:22:722 [32minfo[39m: [32mFound 1 MCP tools[39m
+2025-03-30 16:07:22:722 [37mdebug[39m: [37mConverting MCP tool "echo_tool" to LangChain tool[39m
+2025-03-30 16:07:22:722 [32minfo[39m: [32mSuccessfully loaded 1 tools from server "simple_sse_server"[39m
+2025-03-30 16:07:24:724 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 16:07:24:724 [37mdebug[39m: [37mTool call received for echo_tool with input: hello world[39m
+2025-03-30 16:07:24:724 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: hello world[39m
+2025-03-30 16:07:24:724 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:07:24:724 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:07:24:724 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 16:07:24:724 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 16:07:27:727 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 16:07:27:727 [37mdebug[39m: [37mClosing SSE transport for server "simple_sse_server"[39m
+2025-03-30 16:07:27:727 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 16:07:57:757 [32minfo[39m: [32mInitializing connection to server "stagehand"...[39m
+2025-03-30 16:07:57:757 [37mdebug[39m: [37mCreating SSE transport for server "stagehand" with URL: http://localhost:3002/stagehand/sse[39m
+2025-03-30 16:07:57:757 [37mdebug[39m: [37mLoading tools for server "stagehand"...[39m
+2025-03-30 16:07:57:757 [37mdebug[39m: [37mListing available MCP tools...[39m
+2025-03-30 16:07:57:757 [32minfo[39m: [32mFound 5 MCP tools[39m
+2025-03-30 16:07:57:757 [37mdebug[39m: [37mConverting MCP tool "stagehand_navigate" to LangChain tool[39m
+2025-03-30 16:07:57:757 [37mdebug[39m: [37mConverting MCP tool "stagehand_act" to LangChain tool[39m
+2025-03-30 16:07:57:757 [37mdebug[39m: [37mConverting MCP tool "stagehand_extract" to LangChain tool[39m
+2025-03-30 16:07:57:757 [33mwarn[39m: [33mTool "stagehand_extract" has an empty input schema. Some LLMs and agent implementations (especially React agents and Gemini models) require tools to have parameters.[39m
+2025-03-30 16:07:57:757 [37mdebug[39m: [37mAdapter will handle empty schema tools by accepting empty input objects for tool "stagehand_extract".[39m
+2025-03-30 16:07:57:757 [37mdebug[39m: [37mConverting MCP tool "stagehand_observe" to LangChain tool[39m
+2025-03-30 16:07:57:757 [37mdebug[39m: [37mConverting MCP tool "screenshot" to LangChain tool[39m
+2025-03-30 16:07:57:757 [33mwarn[39m: [33mTool "screenshot" has an empty input schema. Some LLMs and agent implementations (especially React agents and Gemini models) require tools to have parameters.[39m
+2025-03-30 16:07:57:757 [37mdebug[39m: [37mAdapter will handle empty schema tools by accepting empty input objects for tool "screenshot".[39m
+2025-03-30 16:07:57:757 [32minfo[39m: [32mSuccessfully loaded 5 tools from server "stagehand"[39m
+2025-03-30 16:07:58:758 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:07:58:758 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:07:58:758 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_navigate:[39m
+2025-03-30 16:08:00:80 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:08:00:80 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:08:00:80 [37mdebug[39m: [37mMCP tool stagehand_navigate returned:[39m
+2025-03-30 16:08:00:80 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_navigate:[39m
+2025-03-30 16:08:02:82 [37mdebug[39m: [37mTool call received for stagehand_extract with input:[39m
+2025-03-30 16:08:02:82 [37mdebug[39m: [37mTool call received for stagehand_extract with input:[39m
+2025-03-30 16:08:02:82 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_extract:[39m
+2025-03-30 16:08:02:82 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:08:02:82 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:08:02:82 [37mdebug[39m: [37mMCP tool stagehand_extract returned:[39m
+2025-03-30 16:08:02:82 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_extract:[39m
+2025-03-30 16:08:05:85 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 16:08:05:85 [37mdebug[39m: [37mClosing SSE transport for server "stagehand"[39m
+2025-03-30 16:08:05:85 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 16:08:48:848 [33mwarn[39m: [33mNo connections to initialize[39m
+2025-03-30 16:08:51:851 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 16:08:51:851 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 16:10:02:102 [32minfo[39m: [32mInitializing connection to server "stagehand"...[39m
+2025-03-30 16:10:02:102 [37mdebug[39m: [37mCreating SSE transport for server "stagehand" with URL: http://localhost:3002/stagehand/sse[39m
+2025-03-30 16:10:02:102 [37mdebug[39m: [37mLoading tools for server "stagehand"...[39m
+2025-03-30 16:10:02:102 [37mdebug[39m: [37mListing available MCP tools...[39m
+2025-03-30 16:10:02:102 [32minfo[39m: [32mFound 5 MCP tools[39m
+2025-03-30 16:10:02:102 [37mdebug[39m: [37mConverting MCP tool "stagehand_navigate" to LangChain tool[39m
+2025-03-30 16:10:02:102 [37mdebug[39m: [37mConverting MCP tool "stagehand_act" to LangChain tool[39m
+2025-03-30 16:10:02:102 [37mdebug[39m: [37mConverting MCP tool "stagehand_extract" to LangChain tool[39m
+2025-03-30 16:10:02:102 [33mwarn[39m: [33mTool "stagehand_extract" has an empty input schema. Some LLMs and agent implementations (especially React agents and Gemini models) require tools to have parameters.[39m
+2025-03-30 16:10:02:102 [37mdebug[39m: [37mAdapter will handle empty schema tools by accepting empty input objects for tool "stagehand_extract".[39m
+2025-03-30 16:10:02:102 [37mdebug[39m: [37mConverting MCP tool "stagehand_observe" to LangChain tool[39m
+2025-03-30 16:10:02:102 [37mdebug[39m: [37mConverting MCP tool "screenshot" to LangChain tool[39m
+2025-03-30 16:10:02:102 [33mwarn[39m: [33mTool "screenshot" has an empty input schema. Some LLMs and agent implementations (especially React agents and Gemini models) require tools to have parameters.[39m
+2025-03-30 16:10:02:102 [37mdebug[39m: [37mAdapter will handle empty schema tools by accepting empty input objects for tool "screenshot".[39m
+2025-03-30 16:10:02:102 [32minfo[39m: [32mSuccessfully loaded 5 tools from server "stagehand"[39m
+2025-03-30 16:10:05:105 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:10:05:105 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:10:05:105 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_navigate:[39m
+2025-03-30 16:10:30:1030 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:10:30:1030 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:10:30:1030 [37mdebug[39m: [37mMCP tool stagehand_navigate returned:[39m
+2025-03-30 16:10:30:1030 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_navigate:[39m
+2025-03-30 16:10:31:1031 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:10:31:1031 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:10:31:1031 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_navigate:[39m
+2025-03-30 16:10:49:1049 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:10:49:1049 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:10:49:1049 [37mdebug[39m: [37mMCP tool stagehand_navigate returned:[39m
+2025-03-30 16:10:49:1049 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_navigate:[39m
+2025-03-30 16:10:50:1050 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:10:50:1050 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:10:50:1050 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_navigate:[39m
+2025-03-30 16:11:07:117 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:11:07:117 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:11:07:117 [37mdebug[39m: [37mMCP tool stagehand_navigate returned:[39m
+2025-03-30 16:11:07:117 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_navigate:[39m
+2025-03-30 16:11:09:119 [37mdebug[39m: [37mTool call received for screenshot with input:[39m
+2025-03-30 16:11:09:119 [37mdebug[39m: [37mTool call received for screenshot with input:[39m
+2025-03-30 16:11:09:119 [37mdebug[39m: [37mFinal parsed input for MCP tool screenshot:[39m
+2025-03-30 16:11:12:1112 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:11:12:1112 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:11:12:1112 [37mdebug[39m: [37mMCP tool screenshot returned:[39m
+2025-03-30 16:11:12:1112 [37mdebug[39m: [37mFinal string result from MCP tool screenshot:[39m
+2025-03-30 16:11:17:1117 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 16:11:17:1117 [37mdebug[39m: [37mClosing SSE transport for server "stagehand"[39m
+2025-03-30 16:11:17:1117 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 16:17:40:1740 [32minfo[39m: [32mInitializing connection to server "stagehand"...[39m
+2025-03-30 16:17:40:1740 [37mdebug[39m: [37mCreating SSE transport for server "stagehand" with URL: http://localhost:3002/stagehand/sse[39m
+2025-03-30 16:17:40:1740 [37mdebug[39m: [37mLoading tools for server "stagehand"...[39m
+2025-03-30 16:17:40:1740 [37mdebug[39m: [37mListing available MCP tools...[39m
+2025-03-30 16:17:40:1740 [32minfo[39m: [32mFound 5 MCP tools[39m
+2025-03-30 16:17:40:1740 [37mdebug[39m: [37mConverting MCP tool "stagehand_navigate" to LangChain tool[39m
+2025-03-30 16:17:40:1740 [37mdebug[39m: [37mConverting MCP tool "stagehand_act" to LangChain tool[39m
+2025-03-30 16:17:40:1740 [37mdebug[39m: [37mConverting MCP tool "stagehand_extract" to LangChain tool[39m
+2025-03-30 16:17:40:1740 [33mwarn[39m: [33mTool "stagehand_extract" has an empty input schema. Some LLMs and agent implementations (especially React agents and Gemini models) require tools to have parameters.[39m
+2025-03-30 16:17:40:1740 [37mdebug[39m: [37mAdapter will handle empty schema tools by accepting empty input objects for tool "stagehand_extract".[39m
+2025-03-30 16:17:40:1740 [37mdebug[39m: [37mConverting MCP tool "stagehand_observe" to LangChain tool[39m
+2025-03-30 16:17:40:1740 [37mdebug[39m: [37mConverting MCP tool "screenshot" to LangChain tool[39m
+2025-03-30 16:17:40:1740 [33mwarn[39m: [33mTool "screenshot" has an empty input schema. Some LLMs and agent implementations (especially React agents and Gemini models) require tools to have parameters.[39m
+2025-03-30 16:17:40:1740 [37mdebug[39m: [37mAdapter will handle empty schema tools by accepting empty input objects for tool "screenshot".[39m
+2025-03-30 16:17:40:1740 [32minfo[39m: [32mSuccessfully loaded 5 tools from server "stagehand"[39m
+2025-03-30 16:17:43:1743 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:17:43:1743 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:17:43:1743 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_navigate:[39m
+2025-03-30 16:18:01:181 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:18:01:181 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:18:01:181 [37mdebug[39m: [37mMCP tool stagehand_navigate returned:[39m
+2025-03-30 16:18:01:181 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_navigate:[39m
+2025-03-30 16:18:02:182 [37mdebug[39m: [37mTool call received for stagehand_observe with input:[39m
+2025-03-30 16:18:02:182 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 16:18:02:182 [37mdebug[39m: [37mClosing SSE transport for server "stagehand"[39m
+2025-03-30 16:18:02:182 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 16:22:28:2228 [32minfo[39m: [32mInitializing connection to server "stagehand"...[39m
+2025-03-30 16:22:28:2228 [37mdebug[39m: [37mCreating SSE transport for server "stagehand" with URL: http://localhost:3002/stagehand/sse[39m
+2025-03-30 16:22:28:2228 [37mdebug[39m: [37mLoading tools for server "stagehand"...[39m
+2025-03-30 16:22:28:2228 [37mdebug[39m: [37mListing available MCP tools...[39m
+2025-03-30 16:22:28:2228 [32minfo[39m: [32mFound 5 MCP tools[39m
+2025-03-30 16:22:28:2228 [37mdebug[39m: [37mConverting MCP tool "stagehand_navigate" to LangChain tool[39m
+2025-03-30 16:22:28:2228 [37mdebug[39m: [37mConverting MCP tool "stagehand_act" to LangChain tool[39m
+2025-03-30 16:22:28:2228 [37mdebug[39m: [37mConverting MCP tool "stagehand_extract" to LangChain tool[39m
+2025-03-30 16:22:28:2228 [33mwarn[39m: [33mTool "stagehand_extract" has an empty input schema. Some LLMs and agent implementations (especially React agents and Gemini models) require tools to have parameters.[39m
+2025-03-30 16:22:28:2228 [37mdebug[39m: [37mAdapter will handle empty schema tools by accepting empty input objects for tool "stagehand_extract".[39m
+2025-03-30 16:22:28:2228 [37mdebug[39m: [37mConverting MCP tool "stagehand_observe" to LangChain tool[39m
+2025-03-30 16:22:28:2228 [37mdebug[39m: [37mConverting MCP tool "screenshot" to LangChain tool[39m
+2025-03-30 16:22:28:2228 [33mwarn[39m: [33mTool "screenshot" has an empty input schema. Some LLMs and agent implementations (especially React agents and Gemini models) require tools to have parameters.[39m
+2025-03-30 16:22:28:2228 [37mdebug[39m: [37mAdapter will handle empty schema tools by accepting empty input objects for tool "screenshot".[39m
+2025-03-30 16:22:28:2228 [32minfo[39m: [32mSuccessfully loaded 5 tools from server "stagehand"[39m
+2025-03-30 16:22:30:2230 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:22:30:2230 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:22:30:2230 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_navigate:[39m
+2025-03-30 16:22:46:2246 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:22:46:2246 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:22:46:2246 [37mdebug[39m: [37mMCP tool stagehand_navigate returned:[39m
+2025-03-30 16:22:46:2246 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_navigate:[39m
+2025-03-30 16:22:48:2248 [37mdebug[39m: [37mTool call received for screenshot with input:[39m
+2025-03-30 16:22:48:2248 [37mdebug[39m: [37mTool call received for screenshot with input:[39m
+2025-03-30 16:22:48:2248 [37mdebug[39m: [37mFinal parsed input for MCP tool screenshot:[39m
+2025-03-30 16:22:49:2249 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:22:49:2249 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:22:49:2249 [37mdebug[39m: [37mMCP tool screenshot returned:[39m
+2025-03-30 16:22:49:2249 [37mdebug[39m: [37mFinal string result from MCP tool screenshot:[39m
+2025-03-30 16:22:51:2251 [37mdebug[39m: [37mTool call received for stagehand_observe with input:[39m
+2025-03-30 16:22:51:2251 [37mdebug[39m: [37mTool call received for stagehand_observe with input:[39m
+2025-03-30 16:22:51:2251 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_observe:[39m
+2025-03-30 16:22:56:2256 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:22:56:2256 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:22:56:2256 [37mdebug[39m: [37mMCP tool stagehand_observe returned:[39m
+2025-03-30 16:22:56:2256 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_observe:[39m
+2025-03-30 16:22:58:2258 [37mdebug[39m: [37mTool call received for stagehand_act with input:[39m
+2025-03-30 16:22:58:2258 [37mdebug[39m: [37mTool call received for stagehand_act with input:[39m
+2025-03-30 16:22:58:2258 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_act:[39m
+2025-03-30 16:23:05:235 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:23:05:235 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:23:05:235 [37mdebug[39m: [37mMCP tool stagehand_act returned:[39m
+2025-03-30 16:23:05:235 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_act:[39m
+2025-03-30 16:23:07:237 [37mdebug[39m: [37mTool call received for screenshot with input:[39m
+2025-03-30 16:23:07:237 [37mdebug[39m: [37mTool call received for screenshot with input:[39m
+2025-03-30 16:23:07:237 [37mdebug[39m: [37mFinal parsed input for MCP tool screenshot:[39m
+2025-03-30 16:23:12:2312 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:23:12:2312 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:23:12:2312 [37mdebug[39m: [37mMCP tool screenshot returned:[39m
+2025-03-30 16:23:12:2312 [37mdebug[39m: [37mFinal string result from MCP tool screenshot:[39m
+2025-03-30 16:23:14:2314 [37mdebug[39m: [37mTool call received for stagehand_observe with input:[39m
+2025-03-30 16:23:14:2314 [37mdebug[39m: [37mTool call received for stagehand_observe with input:[39m
+2025-03-30 16:23:14:2314 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_observe:[39m
+2025-03-30 16:23:17:2317 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:23:17:2317 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:23:17:2317 [37mdebug[39m: [37mMCP tool stagehand_observe returned:[39m
+2025-03-30 16:23:17:2317 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_observe:[39m
+2025-03-30 16:23:19:2319 [37mdebug[39m: [37mTool call received for stagehand_act with input:[39m
+2025-03-30 16:23:19:2319 [37mdebug[39m: [37mTool call received for stagehand_act with input:[39m
+2025-03-30 16:23:19:2319 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_act:[39m
+2025-03-30 16:23:24:2324 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:23:24:2324 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:23:24:2324 [37mdebug[39m: [37mMCP tool stagehand_act returned:[39m
+2025-03-30 16:23:24:2324 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_act:[39m
+2025-03-30 16:23:26:2326 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:23:26:2326 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:23:26:2326 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_navigate:[39m
+2025-03-30 16:23:40:2340 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:23:40:2340 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:23:40:2340 [37mdebug[39m: [37mMCP tool stagehand_navigate returned:[39m
+2025-03-30 16:23:40:2340 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_navigate:[39m
+2025-03-30 16:23:42:2342 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:23:42:2342 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:23:42:2342 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_navigate:[39m
+2025-03-30 16:23:45:2345 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:23:45:2345 [31merror[39m: [31mError calling tool stagehand_navigate: Failed to navigate: page.goto: Target page, context or browser has been closed[39m
+[31mCall log:[39m
+[31m[2m  - navigating to "https://www.assent.com/careers/", waiting until "load"[22m[39m
+[31m[39m
+2025-03-30 16:23:48:2348 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:23:48:2348 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:23:48:2348 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_navigate:[39m
+2025-03-30 16:24:08:248 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:24:08:248 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:24:08:248 [37mdebug[39m: [37mMCP tool stagehand_navigate returned:[39m
+2025-03-30 16:24:08:248 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_navigate:[39m
+2025-03-30 16:24:09:249 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:24:09:249 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:24:09:249 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_navigate:[39m
+2025-03-30 16:24:21:2421 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:24:21:2421 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:24:21:2421 [37mdebug[39m: [37mMCP tool stagehand_navigate returned:[39m
+2025-03-30 16:24:21:2421 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_navigate:[39m
+2025-03-30 16:24:23:2423 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:24:23:2423 [37mdebug[39m: [37mTool call received for stagehand_navigate with input:[39m
+2025-03-30 16:24:23:2423 [37mdebug[39m: [37mFinal parsed input for MCP tool stagehand_navigate:[39m
+2025-03-30 16:24:36:2436 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 16:24:36:2436 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 16:24:36:2436 [37mdebug[39m: [37mMCP tool stagehand_navigate returned:[39m
+2025-03-30 16:24:36:2436 [37mdebug[39m: [37mFinal string result from MCP tool stagehand_navigate:[39m
+2025-03-30 16:24:41:2441 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 16:24:41:2441 [37mdebug[39m: [37mClosing SSE transport for server "stagehand"[39m
+2025-03-30 16:24:41:2441 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 16:25:20:2520 [33mwarn[39m: [33mNo connections to initialize[39m
+2025-03-30 16:25:24:2524 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 16:25:24:2524 [32minfo[39m: [32mAll MCP connections closed[39m

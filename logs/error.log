@@ -20,3 +20,7 @@
 2025-03-30 15:00:15:015 [31merror[39m: [31mFailed to create SSE transport for server "simple_sse_server": MCPClientError: Failed to connect to SSE server "simple_sse_server": Error: SSE error: TypeError: fetch failed: connect ECONNREFUSED ::1:3001, connect ECONNREFUSED 127.0.0.1:3001[39m
 2025-03-30 15:53:36:5336 [31merror[39m: [31mFailed to create SSE transport for server "simple_sse_server": MCPClientError: Failed to connect to SSE server "simple_sse_server": Error: SSE error: TypeError: fetch failed: connect ECONNREFUSED ::1:3001, connect ECONNREFUSED 127.0.0.1:3001[39m
 2025-03-30 15:54:00:540 [31merror[39m: [31mFailed to create SSE transport for server "simple_sse_server": MCPClientError: Failed to connect to SSE server "simple_sse_server": Error: SSE error: TypeError: fetch failed: connect ECONNREFUSED ::1:3001, connect ECONNREFUSED 127.0.0.1:3001[39m
+2025-03-30 16:23:45:2345 [31merror[39m: [31mError calling tool stagehand_navigate: Failed to navigate: page.goto: Target page, context or browser has been closed[39m
+[31mCall log:[39m
+[31m[2m  - navigating to "https://www.assent.com/careers/", waiting until "load"[22m[39m
+[31m[39m

@@ -11,6 +11,10 @@ export default function AgentChat() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
+  const [activeTools, setActiveTools] = useState({
+    browser: false,
+    calculator: false,
+  });
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -25,47 +29,51 @@ export default function AgentChat() {
     e.preventDefault();
     if (!input.trim() || isProcessing) return;
 
-    const userMessage = input.trim();
+    const userMessage = input;
     setInput("");
-    setIsProcessing(true);
-
-    // Add user message immediately
     setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
+    setIsProcessing(true);
 
     try {
       const response = await fetch("/api/agent", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ objective: userMessage }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          objective: userMessage,
+          activeTools: activeTools,
+        }),
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "assistant",
-            content: data.result,
-          },
-        ]);
-      } else {
-        throw new Error(data.error || "Failed to process request");
+      if (!response.ok) {
+        throw new Error("Failed to get response");
       }
+
+      const data = await response.json();
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: data.result },
+      ]);
     } catch (error) {
-      console.error("Error processing message:", error);
-      const errorMessage =
-        error instanceof Error ? error.message : "An unknown error occurred";
+      console.error("Error:", error);
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content: `Error: ${errorMessage}`,
+          content: "Sorry, I encountered an error. Please try again.",
         },
       ]);
     } finally {
       setIsProcessing(false);
     }
+  };
+
+  const handleToolToggle = (tool: "browser" | "calculator") => {
+    setActiveTools((prev) => ({
+      ...prev,
+      [tool]: !prev[tool],
+    }));
   };
 
   return (
@@ -138,14 +146,22 @@ export default function AgentChat() {
           <div className="flex space-x-4 mt-2 pl-2">
             <button
               type="button"
-              className="hover:bg-blue-100 rounded-full group relative"
+              onClick={() => handleToolToggle("browser")}
+              className={`hover:bg-blue-100 rounded-full p-2 group relative ${
+                activeTools.browser
+                  ? "bg-blue-100 text-blue-500"
+                  : "text-gray-500"
+              }`}
               title="Agentic browser"
             >
               <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-gray-800 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                Agentic browser
+                Agentic browser{" "}
+                {activeTools.browser ? "(active)" : "(inactive)"}
               </span>
               <svg
-                className="w-4 h-4 text-gray-500 group-hover:text-blue-500 group-hover:rotate-180 transition-all duration-300"
+                className={`w-4 h-4 transition-all duration-300 ${
+                  activeTools.browser ? "rotate-180" : ""
+                }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -160,14 +176,19 @@ export default function AgentChat() {
             </button>
             <button
               type="button"
-              className="hover:bg-blue-100 rounded-full group relative"
+              onClick={() => handleToolToggle("calculator")}
+              className={`hover:bg-blue-100 rounded-full p-2 group relative ${
+                activeTools.calculator
+                  ? "bg-blue-100 text-blue-500"
+                  : "text-gray-500"
+              }`}
               title="Test echo"
             >
               <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-gray-800 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                Test echo
+                Calculator {activeTools.calculator ? "(active)" : "(inactive)"}
               </span>
               <svg
-                className="w-4 h-4 text-gray-500 group-hover:text-blue-500"
+                className="w-4 h-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
