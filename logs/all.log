@@ -462,3 +462,44 @@
 2025-03-30 10:50:30:5030 [32minfo[39m: [32mClosing all MCP connections...[39m
 2025-03-30 10:50:30:5030 [37mdebug[39m: [37mClosing SSE transport for server "simple_sse_server"[39m
 2025-03-30 10:50:30:5030 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 14:18:43:1843 [32minfo[39m: [32mInitializing connection to server "simple_sse_server"...[39m
+2025-03-30 14:18:43:1843 [37mdebug[39m: [37mCreating SSE transport for server "simple_sse_server" with URL: http://localhost:3001/sse[39m
+2025-03-30 14:18:43:1843 [37mdebug[39m: [37mLoading tools for server "simple_sse_server"...[39m
+2025-03-30 14:18:43:1843 [37mdebug[39m: [37mListing available MCP tools...[39m
+2025-03-30 14:18:43:1843 [32minfo[39m: [32mFound 1 MCP tools[39m
+2025-03-30 14:18:43:1843 [37mdebug[39m: [37mConverting MCP tool "echo_tool" to LangChain tool[39m
+2025-03-30 14:18:43:1843 [32minfo[39m: [32mSuccessfully loaded 1 tools from server "simple_sse_server"[39m
+2025-03-30 14:18:44:1844 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 14:18:44:1844 [37mdebug[39m: [37mTool call received for echo_tool with input: hello world[39m
+2025-03-30 14:18:44:1844 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: hello world[39m
+2025-03-30 14:18:44:1844 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 14:18:44:1844 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 14:18:44:1844 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 14:18:44:1844 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 14:18:45:1845 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 14:18:45:1845 [37mdebug[39m: [37mTool call received for echo_tool with input: hello world[39m
+2025-03-30 14:18:45:1845 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: hello world[39m
+2025-03-30 14:18:45:1845 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 14:18:45:1845 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 14:18:45:1845 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 14:18:45:1845 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 14:18:47:1847 [37mdebug[39m: [37mTool call received for echo_tool with input:[39m
+2025-03-30 14:18:47:1847 [37mdebug[39m: [37mTool call received for echo_tool with input: hello world[39m
+2025-03-30 14:18:47:1847 [37mdebug[39m: [37mFinal parsed input for MCP tool echo_tool: hello world[39m
+2025-03-30 14:18:47:1847 [37mdebug[39m: [37mProcessing MCP tool result:[39m
+2025-03-30 14:18:47:1847 [37mdebug[39m: [37mExtracted text content from MCP result:[39m
+2025-03-30 14:18:47:1847 [37mdebug[39m: [37mMCP tool echo_tool returned:[39m
+2025-03-30 14:18:47:1847 [37mdebug[39m: [37mFinal string result from MCP tool echo_tool:[39m
+2025-03-30 14:18:49:1849 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 14:18:49:1849 [37mdebug[39m: [37mClosing SSE transport for server "simple_sse_server"[39m
+2025-03-30 14:18:49:1849 [32minfo[39m: [32mAll MCP connections closed[39m
+2025-03-30 14:19:02:192 [32minfo[39m: [32mInitializing connection to server "simple_sse_server"...[39m
+2025-03-30 14:19:02:192 [37mdebug[39m: [37mCreating SSE transport for server "simple_sse_server" with URL: http://localhost:3001/sse[39m
+2025-03-30 14:19:02:192 [37mdebug[39m: [37mLoading tools for server "simple_sse_server"...[39m
+2025-03-30 14:19:02:192 [37mdebug[39m: [37mListing available MCP tools...[39m
+2025-03-30 14:19:02:192 [32minfo[39m: [32mFound 1 MCP tools[39m
+2025-03-30 14:19:02:192 [37mdebug[39m: [37mConverting MCP tool "echo_tool" to LangChain tool[39m
+2025-03-30 14:19:02:192 [32minfo[39m: [32mSuccessfully loaded 1 tools from server "simple_sse_server"[39m
+2025-03-30 14:19:05:195 [32minfo[39m: [32mClosing all MCP connections...[39m
+2025-03-30 14:19:05:195 [37mdebug[39m: [37mClosing SSE transport for server "simple_sse_server"[39m
+2025-03-30 14:19:05:195 [32minfo[39m: [32mAll MCP connections closed[39m
